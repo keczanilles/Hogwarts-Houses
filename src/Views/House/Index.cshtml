@@ -1,0 +1,25 @@
+﻿@using HogwartsHouses.Models
+@{
+    var rooms = (HashSet<Room>) ViewData["rooms"];
+}
+
+<head>
+    <link href="css/site.css" rel="stylesheet"/>
+</head>
+
+<body>
+<ul>
+    @foreach (var room in rooms)
+    {
+        <li>
+            <p>Room number: @room.Id </p> <p>Need renovation: @room.NeedRenovation</p> <p>Is Available: @room.IsAvailable</p>
+            <ol>
+                @foreach (var student in room.GetAllStudents())
+                {
+                    <li>@student.Name</li>
+                }
+            </ol>
+        </li>
+    }
+</ul>
+</body>

@@ -21,7 +21,10 @@ namespace HogwartsHouses.DAL
 
         public void Initialize()
         {
-            throw new NotImplementedException();
+            Room room = new Room(1);
+            Student student = new Student("Harry", HouseType.Gryffindor, PetType.Owl);
+            room.AddStudent(student);
+            Rooms.Add(room);
         }
 
         public void AddRoom(Room room)

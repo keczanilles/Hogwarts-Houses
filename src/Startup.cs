@@ -20,8 +20,7 @@ namespace HogwartsHouses
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-            services.AddSingleton<RoomSampler>();
+            services.AddControllersWithViews();
             services.AddSingleton<IRepository<Room>>(x => new RoomSampledRepository());
             services.AddSingleton<IRoomService>(x => new RoomService(x.GetRequiredService<IRepository<Room>>()));
         }
@@ -48,7 +47,7 @@ namespace HogwartsHouses
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute("default", "{controller=House}/{action=Index}/{id?}");
             });
         }
     }
