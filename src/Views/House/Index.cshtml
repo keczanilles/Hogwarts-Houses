@@ -12,7 +12,9 @@
     @foreach (var room in rooms)
     {
         <li>
-            <p>Room number: @room.Id </p> <p>Need renovation: @room.NeedRenovation</p> <p>Is Available: @room.IsAvailable</p>
+            <p>Room number: @room.Id </p>
+            <p>Need renovation: @room.NeedRenovation</p>
+            <p>Is Available: @room.IsAvailable</p>
             <ol>
                 @foreach (var student in room.GetAllStudents())
                 {
@@ -23,3 +25,8 @@
     }
 </ul>
 </body>
+
+
+
+
+

@@ -57,5 +57,17 @@ namespace HogwartsHouses.Controllers
         {
             RoomService.AddStudentToRoom(roomId, studentName);
         }
+
+        [HttpGet("/rooms/available")]
+        public HashSet<Room> GetAvailableRooms()
+        {
+            return RoomService.GetAvailableRooms();
+        }
+
+        [HttpGet("/rooms/rat-owners")]
+        public HashSet<Room> RatOwners()
+        {
+            return RoomService.GetStudentsWithOnlyRats();
+        }
     }
 }
