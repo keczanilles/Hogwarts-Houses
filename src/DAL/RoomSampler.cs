@@ -22,9 +22,13 @@ namespace HogwartsHouses.DAL
         public void Initialize()
         {
             Room room = new Room(1);
-            Student student = new Student("Harry", HouseType.Gryffindor, PetType.Owl);
-            room.AddStudent(student);
+            Student student = new Student("Draco", HouseType.Slytherin, PetType.Owl);
             Rooms.Add(room);
+            Room room2 = new Room(2);
+            Rooms.Add(room2);
+            Student student2 = new Student("Hermione", HouseType.Gryffindor, PetType.Rat);
+            Students.Add(student2);
+            Students.Add(student);
         }
 
         public void AddRoom(Room room)
