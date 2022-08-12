@@ -23,5 +23,19 @@ namespace HogwartsHouses.Models
             NeedRenovation = false;
             _students = new();
         }
+
+        public HashSet<Student> GetAllStudents()
+        {
+            return _students;
+        }
+
+        public void AddStudent(Student student)
+        {
+            if (IsAvailable)
+            {
+                _students.Add(student);
+            }
+            
+        }
     }
 }

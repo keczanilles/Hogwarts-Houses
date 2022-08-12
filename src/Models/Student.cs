@@ -18,8 +18,5 @@ namespace HogwartsHouses.Models
             HouseType = houseType;
             PetType = petType;
         }
-
-
-
     }
 }
